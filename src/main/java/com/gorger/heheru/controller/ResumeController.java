@@ -26,5 +26,11 @@ public class ResumeController {
         return "all-resumes";
     }
 
+    public String addResume(Model model) {
+        Resume resume = new Resume();
+        model.addAttribute("res", resume);
+        return "new-resume";
+    }
+
 
 }

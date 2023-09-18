@@ -2,7 +2,7 @@ package com.gorger.heheru.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "resumes")
@@ -17,8 +17,14 @@ public class Resume implements Comparable<Resume>, Serializable {
     @Column(name = "full_name")
     private String fullName;
 
-    public Resume() {
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "resume_id")
+    private List<Contact> contacts;
 
+    public Resume() {}
+
+    public Resume(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getId() {
@@ -31,6 +37,21 @@ public class Resume implements Comparable<Resume>, Serializable {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
+    }
+
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
+    public void addContact(Contact contact) {
+        if (contacts == null) {
+            contacts = new ArrayList<>();
+        }
+        contacts.add(contact);
     }
 
     @Override

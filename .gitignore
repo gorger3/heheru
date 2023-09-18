@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### My files for testing ###
+
+
 ### IntelliJ IDEA ###
 .idea
 .idea/modules.xml
