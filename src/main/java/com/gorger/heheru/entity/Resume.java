@@ -17,9 +17,9 @@ public class Resume implements Comparable<Resume>, Serializable {
     @Column(name = "full_name")
     private String fullName;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "resume_id")
-    private List<Contact> contacts;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "contacts_id")
+    private Contact contact;
 
     public Resume() {}
 
@@ -31,6 +31,10 @@ public class Resume implements Comparable<Resume>, Serializable {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -39,19 +43,12 @@ public class Resume implements Comparable<Resume>, Serializable {
         this.fullName = fullName;
     }
 
-    public List<Contact> getContacts() {
-        return contacts;
+    public Contact getContact() {
+        return contact;
     }
 
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
-    }
-
-    public void addContact(Contact contact) {
-        if (contacts == null) {
-            contacts = new ArrayList<>();
-        }
-        contacts.add(contact);
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
     @Override

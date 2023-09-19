@@ -29,3 +29,16 @@ alter table contacts
         foreign key (resume_id)
             references resumes (id)
             on DELETE cascade;
+-- Изменил столбец в Контактах
+alter table contacts
+    rename column type to phone;
+alter table contacts
+    alter column phone type varchar(30);
+alter table contacts
+    alter column phone set not null;
+-- Добавил столбец в Контактах
+alter table contacts
+    add column linkedin varchar(30);
+-- Добавил в Резюме внешний ключ, ссылающийся на Контакты
+alter table resumes
+    add foreign key (contacts_id) references contacts (id);

@@ -10,22 +10,27 @@ public class Contact {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "type")
-    private String type;
+    @Column(name = "phone")
+    private String phone;
 
-    @Column(name = "value")
-    private String text;
+    @Column(name = "mail")
+    private String mail;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "resume_id")
-    private Resume resume;
+    @Column(name = "linkedin")
+    private String linkedin;
+
+    @Column(name = "github")
+    private String github;
+
+    @Column(name = "address")
+    private String address;
 
     public Contact() {
     }
 
-    public Contact(String type, String text) {
-        this.type = type;
-        this.text = text;
+    public Contact(String phone, String mail) {
+        this.phone = phone;
+        this.mail = mail;
     }
 
     public int getId() {
@@ -36,19 +41,43 @@ public class Contact {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getText() {
-        return text;
+    public String getMail() {
+        return mail;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+
+    public String getGithub() {
+        return github;
+    }
+
+    public void setGithub(String github) {
+        this.github = github;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

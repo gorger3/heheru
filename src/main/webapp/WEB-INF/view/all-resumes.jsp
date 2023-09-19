@@ -20,7 +20,7 @@
     </c:forEach>
 </table>
 
-<input>
+<input type="button" value="Добавить" onclick="window.location.href='resume'">
 
 </body>
 </html>
