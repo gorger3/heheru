@@ -41,6 +41,8 @@ public class ResumeController {
     @RequestMapping("/save-resume")
     public String saveResume(@ModelAttribute("res") Resume resume) {
 
+        resumeService.saveResume(resume);
+
         return "redirect:/";
     }
 

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ResumeDAO {
     List<Resume> getAllResumes();
+
+    void saveResume(Resume resume);
 }

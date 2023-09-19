@@ -27,4 +27,10 @@ public class ResumeDAOImpl implements ResumeDAO {
                 .createQuery("from Resume", Resume.class)
                 .getResultList();
     }
+
+    @Override
+    public void saveResume(Resume resume) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(resume);
+    }
 }

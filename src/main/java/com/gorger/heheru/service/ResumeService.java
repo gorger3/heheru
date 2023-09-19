@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface ResumeService {
     List<Resume> getAllResumes();
-//    void saveResume();
+
+    void saveResume(Resume resume);
 }

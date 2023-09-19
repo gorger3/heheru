@@ -24,4 +24,12 @@ public class ResumeServiceImpl implements ResumeService {
         return resumeDAO.getAllResumes();
 
     }
+
+    @Override
+    @Transactional
+    public void saveResume(Resume resume) {
+        resumeDAO.saveResume(resume);
+    }
+
+
 }
