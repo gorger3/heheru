@@ -8,4 +8,6 @@ public interface ResumeDAO {
     List<Resume> getAllResumes();
 
     void saveResume(Resume resume);
+
+    Resume getResume(int id);
 }

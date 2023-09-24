@@ -8,4 +8,6 @@ public interface ResumeService {
     List<Resume> getAllResumes();
 
     void saveResume(Resume resume);
+
+    Resume getResume(int id);
 }

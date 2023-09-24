@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -41,5 +42,12 @@ public class ResumeController {
     public String saveResume(@ModelAttribute("res") Resume resume) {
         resumeService.saveResume(resume);
         return "redirect:/";
+    }
+
+    @RequestMapping("/update-info")
+    public String updateResume(@RequestParam("resId") int id, Model model){
+        Resume resume = resumeService.getResume(id);
+        model.addAttribute("res", resume);
+        return "resume-info";
     }
 }

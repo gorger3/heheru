@@ -31,6 +31,15 @@ public class ResumeDAOImpl implements ResumeDAO {
     @Override
     public void saveResume(Resume resume) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(resume);
+        session.saveOrUpdate(resume);
     }
+
+    @Override
+    public Resume getResume(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Resume resume = session.get(Resume.class, id);
+        return resume;
+    }
+
+
 }
