@@ -27,24 +27,19 @@ public class ResumeController {
         return "all-resumes";
     }
 
-    @RequestMapping("/resume")
+    @RequestMapping("/resume-info")
     public String addResume(Model model) {
         Resume resume = new Resume();
         Contact contact = new Contact();
         resume.setContact(contact);
         model.addAttribute("res", resume);
-        model.addAttribute("cont", contact);
-        return "resume";
+        return "resume-info";
     }
 
 
     @RequestMapping("/save-resume")
     public String saveResume(@ModelAttribute("res") Resume resume) {
-
         resumeService.saveResume(resume);
-
         return "redirect:/";
     }
-
-
 }

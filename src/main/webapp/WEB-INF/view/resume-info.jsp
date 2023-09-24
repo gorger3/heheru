@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <body>
@@ -10,22 +10,17 @@
 
         ФИО <form:input path="fullName"/>
         <br><br>
-
-    <form:form action="save-resume" modelAttribute="cont">
-        Телефон <form:input path="phone"/>
+        Телефон <form:input path="contact.phone"/>
         <br><br>
-        Почта <form:input path="mail"/>
+        Почта <form:input path="contact.mail"/>
         <br><br>
-        Адрес <form:input path="address"/>
+        Адрес <form:input path="contact.address"/>
         <br><br>
-        Linkedin <form:input path="linkedin"/>
+        Linkedin <form:input path="contact.linkedin"/>
         <br><br>
-        Github <form:input path="github"/>
+        Github <form:input path="contact.github"/>
         <br><br>
         <input type="submit" value="Ок"/>
-    </form:form>
-
-
 
     </form:form>
 
