@@ -7,6 +7,8 @@
 
     <form:form action="save-resume" modelAttribute="res">
         <form:hidden path="id"/>
+        <%-- Без contact.id контакт не обновлялся, а сохранялся с новым id. С contact.id контакт стал обнолятся норамально        --%>
+        <form:hidden path="contact.id"/>
 
         ФИО <form:input path="fullName"/>
         <br><br>
